@@ -1,6 +1,5 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
-// const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
   username: {
@@ -16,4 +15,4 @@ const userSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
