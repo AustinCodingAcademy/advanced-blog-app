@@ -11,12 +11,6 @@ const TopNavbar = (props) => {
                 <Nav pullRight>
                   <Link to="/secret"><Navbar.Text>Secret</Navbar.Text></Link>
                 </Nav>
-                <Nav pullRight>
-                  <Link to="/anotherthing"><Navbar.Text>Secret 1</Navbar.Text></Link>
-                </Nav>
-                <Nav pullRight>
-                  <Link to="/morestuff"><Navbar.Text>Secret 2</Navbar.Text></Link>
-                </Nav>
               </div>
               );
 

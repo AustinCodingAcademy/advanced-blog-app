@@ -1,7 +1,7 @@
 import ListModel from "../models/ListModel";
 
 export function create(req, res, next) {
-  const list = new ListModel({ title: req.body.title, userId: req.user._id });
+  const list = new ListModel({ ...req.body, userId: req.user._id });
   list
     .save()
     .then(l => res.json(l))

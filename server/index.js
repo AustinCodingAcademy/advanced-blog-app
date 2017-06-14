@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import authenticationRoutes from "./routes/AuthenticationRoutes";
 import listRoutes from "./routes/ListRoutes";
+import articleRoutes from "./routes/blog/ArticleRoutes";
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -21,9 +22,15 @@ app.use(authenticationRoutes);
 const authStrategy = passport.authenticate("authStrategy", { session: false });
 app.use(authStrategy);
 app.use(listRoutes);
+app.use(articleRoutes);
 
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send(err.message);
+});
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Listening on port:${port}`);
 });
+

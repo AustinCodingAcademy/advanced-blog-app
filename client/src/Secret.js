@@ -10,13 +10,7 @@ class Secret extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/secret").then((res) => {
-      return res.text();
-    }).then((data) => {
-      this.setState({
-        message: data
-      });
-    });
+
   }
 
   render() {
