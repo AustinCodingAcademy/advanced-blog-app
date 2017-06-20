@@ -11,7 +11,7 @@ export function create(req, res, next) {
       };
 
       // Add the item to the lists items array
-      list.itesm.push(item);
+      list.items.push(item);
 
       // Save the list
       return list.save();
